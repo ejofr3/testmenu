@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Esencia Botánica: Un Viaje Casero (Story)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfaf6; /* Light warm off-white */
+            color: #333;
+            overscroll-behavior-y: contain; /* Prevents pull-to-refresh issues */
+        }
+
+        .story-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+
+        .story-page {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px; /* More vertical padding */
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden; /* Crucial: no scroll within page */
+            position: relative;
+            background-color: #ffffff; /* Default page background */
+        }
+
+        .story-page img.plate-image {
+            max-width: calc(100% - 20px); /* Max width with some horizontal margin */
+            max-height: 45vh; /* Adjusted max height for image */
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px; /* Increased margin */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Text Styles */
+        .page-main-title {
+            font-size: 2.2rem; /* Adjusted for smaller screens */
+            font-weight: 700;
+            color: #3a5a5a; /* Darker teal for impact */
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .page-sub-title {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .page-intro-description {
+            font-size: 0.95rem;
+            color: #606060;
+            line-height: 1.5;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        
+        .story-section-title {
+            font-size: 1rem; /* Smaller, as it's a subtitle on the page */
+            font-weight: 600;
+            color: #5a7d7c; /* Muted teal/green */
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .story-course-title {
+            font-size: 1.6rem; /* Prominent course titles */
+            font-weight: 700;
+            color: #4a6a6a; /* Darker teal/green */
+            margin-bottom: 15px; /* Space before image/description */
+            line-height: 1.2;
+        }
+
+        .story-item-description {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            line-height: 1.4;
+            max-width: 90%; /* Ensure text wraps nicely */
+            margin: 0 auto; /* Center if max-width is applied */
+        }
+        
+        .story-item-title { /* For the pizza title */
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-top: 5px; /* Space after image */
+            margin-bottom: 5px;
+        }
+
+        /* Specific Page Styles */
+        #page-header {
+            background-color: #e6e0d9; /* Soft, muted background for the header */
+        }
+        #page-header .page-main-title { color: #404040; }
+        #page-header .page-sub-title { color: #5c5c5c; }
+        #page-header .page-intro-description { color: #6f6f6f; font-style: normal; }
+
+        #page-footer {
+            background-color: #f5f2ef; /* Lighter footer background */
+        }
+        #page-footer p {
+            font-size: 1.1rem;
+            color: #5a7d7c;
+            font-style: italic;
+            max-width: 85%;
+        }
+
+        /* Helper for small text like general descriptions */
+        .small-text-info {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="story-container">
+        <!-- Page 1: Header -->
+        <section class="story-page" id="page-header">
+            <h1 class="page-main-title">Esencia Botánica: Un Viaje Casero</h1>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/IMG_0687%20Medium.jpeg?raw=true" alt="Botanical Esencia" class="plate-image">
+            <p class="page-intro-description">
+                <span style="font-weight: 600;">Una experiencia de degustación vegana exclusiva,</span>
+                creada con pasión e ingredientes frescos y saludables, diseñada para deleitar sus sentidos en un entorno íntimo.
+            </p>
+        </section>
+
+        <!-- Page 2: Bienvenida -->
+        <section class="story-page" id="page-bienvenida">
+            <h3 class="story-section-title">Boisson de Bienvenue</h3>
+            <h4 class="story-course-title">Frescor Rosado Especiado</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu1.jpeg?raw=true" alt="Bebida de Pomelo y Romero" class="plate-image">
+            <p class="story-item-description">
+                Una refrescante y vibrante bebida con pomelo rosado recién exprimido, un toque de jarabe de romero casero y agua con gas, adornada con una ramita de romero fresco.
+            </p>
+        </section>
+
+        <!-- Page 3: Amuse-Bouche -->
+        <section class="story-page" id="page-amusebouche">
+            <h3 class="story-section-title">Amuse-Bouche</h3>
+            <h4 class="story-course-title">Bocado Ilusión Marina</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu2.jpeg?raw=true" alt="Bocaditos de Pepino y Zanahoria" class="plate-image">
+            <p class="story-item-description">
+                Delicadas rodajas de pepino crujiente cubiertas con un cremoso de eneldo y finas láminas de zanahoria marinadas.
+            </p>
+        </section>
+
+        <!-- Page 4: Primer Plato -->
+        <section class="story-page" id="page-primerplato">
+            <h3 class="story-section-title">Première Entrée</h3>
+            <h4 class="story-course-title">Tesoro del Mediterráneo</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu3.jpeg?raw=true" alt="Muhammara con Galletas de Avena" class="plate-image">
+            <p class="story-item-description">
+                Un dip rico, ahumado y sutilmente dulce elaborado con pimientos rojos asados, nueces tostadas y un toque de melaza de granada, servido junto a crujientes galletas de avena.
+            </p>
+        </section>
+
+        <!-- Page 5: Segundo Plato -->
+        <section class="story-page" id="page-segundoplato">
+            <h3 class="story-section-title">Deuxième Entrée</h3>
+            <h4 class="story-course-title">Abrazo Dorado de Otoño</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu4.jpeg?raw=true" alt="Sopa de Calabaza Asada" class="plate-image">
+            <p class="story-item-description">
+                Una sopa aterciopelada y reconfortante, hecha con zapallo butternut asado al horno, terminada con aromáticas hojas de salvia crujientes y semillas de zapallo tostadas.
+            </p>
+        </section>
+
+        <!-- Page 6: Plato Principal -->
+        <section class="story-page" id="page-platoprincipal">
+            <h3 class="story-section-title">Plat Principal</h3>
+            <h4 class="story-course-title">Lienzo Rústico Agridulce</h4>
+            <p class="small-text-info mb-3">
+            </p>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu5.jpeg?raw=true" alt="Pizza de Masa de Harina de Avena" class="plate-image">
+            <p class="story-item-description">
+                Una base de harina de avena, con capas de cebolla caramelizada dulce, tiernos higos frescos, picante glaseado balsámico y un lujoso chorrito de aceite de trufa.
+            </p>
+        </section>
+
+        <!-- Page 7: Limpiador de Paladar -->
+        <section class="story-page" id="page-limpiador">
+            <h3 class="story-section-title">Nettoyant pour le Palais</h3>
+            <h4 class="story-course-title">Suspiro Helado Cítrico</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu6.jpeg?raw=true" alt="Sorbete de Menta y Lima" class="plate-image">
+            <p class="story-item-description">
+                Un sorbete brillante y cítrico, que ofrece una explosión refrescante de menta y lima, sutilmente realzado con un toque de jengibre.
+            </p>
+        </section>
+
+        <!-- Page 8: Postre -->
+        <section class="story-page" id="page-postre">
+            <h3 class="story-section-title">Dessert</h3>
+            <h4 class="story-course-title">Ensueño de Chía y Frutos Rojos</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu7.jpeg?raw=true" alt="Pudín de Chía con Bayas" class="plate-image">
+            <p class="story-item-description">
+                Elegantes capas de cremoso pudín de semillas de chía, vibrante coulis de bayas y crujientes hojuelas de coco tostado, coronado con una mezcla de bayas frescas de temporada.
+            </p>
+        </section>
+
+        <!-- Page 9: Petit Fours -->
+        <section class="story-page" id="page-petitfours">
+            <h3 class="story-section-title">Petits Fours</h3>
+            <h4 class="story-course-title">Joyas de Cacao Intenso</h4>
+            <img src="https://github.com/ejofr3/testmenu/blob/main/menu8.jpeg?raw=true" alt="Trufas de Chocolate Veganas" class="plate-image">
+            <p class="story-item-description">
+                Una selección de ricos y decadentes bombones de chocolate negro veganos, una conclusión dulce perfecta para su viaje culinario.
+            </p>
+        </section>
+
+        <!-- Page 10: Footer -->
+        <section class="story-page" id="page-footer">
+            <p>Esperamos que disfrute de esta experiencia gastronómica única y sincera.</p>
+        </section>
+    </div>
+</body>
+</html>
